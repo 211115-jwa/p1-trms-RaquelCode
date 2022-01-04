@@ -127,4 +127,16 @@ public class CommentPostgres implements CommentDAO {
 		return comments;
 	}
 
+	@Override
+	public void update(Comment dataToUpdate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Comment dataToDelete) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

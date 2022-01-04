@@ -85,4 +85,22 @@ public class StatusPostgres implements StatusDAO {
 		return statuses;
 	}
 
+	@Override
+	public int create(Status dataToAdd) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void update(Status dataToUpdate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Status dataToDelete) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

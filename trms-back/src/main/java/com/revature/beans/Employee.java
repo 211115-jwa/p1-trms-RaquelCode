@@ -2,6 +2,8 @@ package com.revature.beans;
 
 import java.util.Objects;
 
+
+
 public class Employee {
 	private int empId;
 	private String firstName;
@@ -14,6 +16,7 @@ public class Employee {
 	private Department department;
 	
 	public Employee() {
+		
 		empId=0;
 		firstName="First";
 		lastName="Last";
@@ -21,9 +24,17 @@ public class Employee {
 		password="";
 		role = new Role();
 		funds = 1000.00;
-		supervisor = new Employee();
-		department = new Department();
+		supervisor = new Employee(5);
+		department = new Department(5,"Human Resources",5);
 	}
+	
+
+	public Employee(int empId) {
+		super();
+		this.empId = empId;
+	}
+
+
 
 	public int getEmpId() {
 		return empId;

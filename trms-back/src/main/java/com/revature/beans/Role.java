@@ -7,7 +7,7 @@ public class Role {
 	private String name;
 	
 	public Role() {
-		roleId = 1;
+		roleId =2;
 		name="Employee";
 	}
 

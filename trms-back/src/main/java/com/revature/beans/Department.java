@@ -12,6 +12,15 @@ public class Department {
 		name = "";
 		deptHeadId = 0;
 	}
+	
+	public Department(int deptId, String name, int deptHeadId) {
+		super();
+		this.deptId= deptId;
+		this.name = name;
+		this.deptHeadId = deptHeadId;
+	}
+	
+	
 
 	public int getDeptId() {
 		return deptId;

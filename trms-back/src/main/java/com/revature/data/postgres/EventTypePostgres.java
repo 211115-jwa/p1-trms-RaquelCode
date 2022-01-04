@@ -87,4 +87,24 @@ public class EventTypePostgres implements EventTypeDAO {
 		return eventTypes;
 	}
 
+	@Override
+	public int create(Object dataToAdd) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void update(Object dataToUpdate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Object dataToDelete) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
 }
