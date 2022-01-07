@@ -19,8 +19,7 @@ import com.revature.utils.DAOFactory;
 
 public class RequestReviewServiceImpl implements RequestReviewService {
 
-	//private EventTypeDAO eventTypeDao = DAOFactory.getEventTypeDAO();
-	//private GradingFormatDAO gradFormatDao = DAOFactory.getGradingFormatDAO();
+	
 	private StatusDAO statusDao = DAOFactory.getStatusDAO();
 	private ReimbursementDAO pendingDao = DAOFactory.getReimbursementDAO();
 	private CommentDAO commentDao = DAOFactory.getCommentDAO();
@@ -44,20 +43,7 @@ public class RequestReviewServiceImpl implements RequestReviewService {
 		return reimbursements;
 	}
 
-	/*
-	 * @Override public Set<Reimbursement> getPendingReimbursements1(Employee
-	 * approver) { Set<Reimbursement> requests = reqDao.getByRequestor(approver);
-	 * 
-	 * Set<Reimbursement> reque = new HashSet<>(); for (Reimbursement request
-	 * :requests) { if(((Set<Reimbursement>)
-	 * request.getEventType()).contains(statusDao.getByName("Pending"))) {
-	 * reque.add(request); } // End if } // End For requests = reque;
-	 * 
-	 * 
-	 * requests.forEach(req -> { req.setRequestor(approver); });
-	 * 
-	 * return requests; }
-	 */
+	
 	
 	@Override
 	public void approveRequest(Reimbursement request) {
