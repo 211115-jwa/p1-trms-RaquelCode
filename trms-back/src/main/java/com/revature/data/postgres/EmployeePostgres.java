@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import com.revature.beans.Employee;
@@ -17,22 +15,13 @@ import com.revature.utils.ConnectionUtil;
 
 public class EmployeePostgres implements EmployeeDAO {
 	private ConnectionUtil connUtil = ConnectionUtil.getConnectionUtil();
-	private List<Employee> allEmployees;
-	
-	public EmployeePostgres() {
-		allEmployees = new ArrayList<Employee>();
-		Employee employee = new Employee();
-		Employee supervisor = new Employee();
-		employee.setSupervisor(supervisor);
-		allEmployees.add(employee);
-	}
 
 	@Override
 	public int create(Employee dataToAdd) {
 		int generatedId=0;
 		try (Connection conn = connUtil.getConnection()) {
 			conn.setAutoCommit(false);
-			String[] keys = {"emp_id"};
+			String[] keys = {"emp_Id"};
 			String sql="insert into employee"
 					+ " (first_name,"
 					+ " last_name,"

@@ -5,6 +5,7 @@ import java.util.Set;
 import com.revature.beans.Comment;
 import com.revature.beans.Employee;
 import com.revature.beans.Reimbursement;
+import com.revature.beans.Status;
 
 public interface RequestReviewService {
 	/**
@@ -57,4 +58,9 @@ public interface RequestReviewService {
 	 * @param request the request to be rejected
 	 */
 	public void rejectRequest(Reimbursement request, Comment comment);
+
+	//Set<Reimbursement> searchByRequestor(Employee requestor);
+
+	//Set<Reimbursement> searchByStatus(Status status);
+
 }

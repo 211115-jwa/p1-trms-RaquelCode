@@ -5,15 +5,19 @@
 	<groupId>com.revature</groupId>
 	<artifactId>trms-back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<properties>
+	
+<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<sonar.organization>211115-jwa</sonar.organization>
+		<sonar.organization>snicholes</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
-		
-
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.17.1</version>
+		</dependency>
 		<dependency>
 			<groupId>io.javalin</groupId>
 			<artifactId>javalin</artifactId>
@@ -69,5 +73,16 @@
 			<version>7.1.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
 	</dependencies>
 </project>

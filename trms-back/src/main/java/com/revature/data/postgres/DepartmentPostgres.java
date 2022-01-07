@@ -87,22 +87,4 @@ public class DepartmentPostgres implements DepartmentDAO {
 		return depts;
 	}
 
-	@Override
-	public int create(Department dataToAdd) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void update(Department dataToUpdate) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Department dataToDelete) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

@@ -4,8 +4,7 @@ import java.util.Set;
 
 import com.revature.beans.Comment;
 
-
-public interface CommentDAO extends GenericDAO<Comment> {
+public interface CommentDAO {
 	public int create(Comment dataToAdd);
 	public Comment getById(int id);
 	public Set<Comment> getAll();

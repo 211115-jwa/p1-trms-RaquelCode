@@ -2,75 +2,78 @@ package com.revature.data;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-import org.junit.jupiter.api.BeforeAll;
+import java.util.Set;
+
 import org.junit.jupiter.api.Test;
 
-import com.revature.beans.Department;
 import com.revature.beans.Employee;
-import com.revature.beans.Role;
+
 import com.revature.data.postgres.EmployeePostgres;
-import com.revature.data.EmployeeDAO;
 
+public interface EmployeeDAOTest {
+	EmployeeDAO emplDao = new EmployeePostgres();
 
-public class EmployeeDAOTest {
-	private static EmployeeDAO empDAO = new EmployeePostgres();
-	private static Employee mockEmp = new Employee();
-	private static Department dept = new Department();
-	private static Employee sup = mockEmp;
-	
-	
-	
 	@Test
-	public void createTest() {
-		Employee emp = new Employee();
-		int genId = empDAO.create(emp);
-		assertNotEquals(0,genId);
+	public static void createEmplyeeTest() {
+		
+		Employee createTest = new Employee();
+		
+		assertNotEquals(0, emplDao.create(createTest));
+		
 	}
-	
-	
+
 	@Test
-	public void getByIdWhenIdExists() {
-		int idInput = 45;
-		Employee idOutput = empDAO.getById(idInput);
-		assertEquals(45, idOutput.getEmpId());  
-	}
-	
-	
-	@Test
-	public void getByIdWhenIdDoesNotExist() {
-		int idInput = -1;
-		assertNull(empDAO.getById(idInput));
+	public static void testEmplyeeNotValidId() {
+		Employee emplOutput= emplDao.getById(10000);
+		assertNull(emplOutput);
+		
 	}
 	
 	@Test
-	public void getUsernameWhenUserNameExists() {
-		String user = "auphill5";
-		Employee userOut = empDAO.getByUsername(user);
-		assertEquals(user,userOut.getUsername());
+	public static void testEmplyeeUpdate() {
+		Employee emplUpdate = emplDao.getById(1);
+		emplUpdate.setFirstName("Boss");
+		emplDao.update(emplUpdate);
+		assertEquals("Boss",emplDao.getById(1).getFirstName());	
+		
 	}
 	
 	@Test
-	public void getUserNameWhenUserNameDoesNotExist() {
-		String notUser = "alvegrdeeewww";
-		assertNull(empDAO.getByUsername(notUser));
+	public static void getValidEmpleeById()
+	{
+		String emplUsername = "Rql@2424";
+		Employee actual = emplDao.getById(1);
+		assertEquals(emplUsername, actual.getUsername());
+		
 	}
 	
 	@Test
-	public void updateEmployeepassword() {
-		Employee toUpdate = empDAO.getById(40);
-		toUpdate.setPassword("viaerovrh");
-		empDAO.update(toUpdate);
-		assertEquals("viaerovrh",empDAO.getById(40).getPassword());
+	public static void getByEmplyeeUsernameWhenUsernameExists() {
+		
+		String emplUsernameInput = "Rql@2022";
+		
+		Employee emplOutput = emplDao.getByUsername(emplUsernameInput);
+		
+		assertEquals("Rql@2022", emplOutput.getUsername());
+		
 	}
 	
 	@Test
-	public void updateEmployeeNotFoundpassword() {
-		Employee toUpdate1 = empDAO.getById(240);
-		toUpdate1.setPassword("viaerovrh");
-		empDAO.update(toUpdate1);
-		assertNull(empDAO.getById(240).getPassword());
+	public static void getByEmpllyeeUsernameWhenUsernameDoesNotExist() {
+		String emplUsernameInput = "Rql@2021";
+		Employee emplOutput = emplDao.getByUsername(emplUsernameInput);
+		assertNull(emplOutput); 
+		
 	}
 	
+	@Test
+	public static void getAll() {
+		Set<Employee> givenOutput = emplDao.getAll();
+		assertNotNull(givenOutput);
+		
+	}
+
 }
