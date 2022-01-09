@@ -8,10 +8,20 @@ public class Department {
 	private int deptHeadId;
 	
 	public Department() {
-		deptId = 0;
-		name = "";
-		deptHeadId = 0;
+		deptId = 1;
+		name = "Executive";
+		deptHeadId = 1;
 	}
+	
+
+	public Department(int deptId, String name, int deptHeadId) {
+		super();
+		this.deptId = deptId;
+		this.name = name;
+		this.deptHeadId = deptHeadId;
+	}
+
+
 
 	public int getDeptId() {
 		return deptId;

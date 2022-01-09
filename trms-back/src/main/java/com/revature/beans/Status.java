@@ -12,6 +12,15 @@ public class Status {
 		name="Pending Approval";
 		approver="Direct Supervisor";
 	}
+	
+	
+
+	public Status(int statusId) {
+		super();
+		this.statusId = statusId;
+	}
+
+
 
 	public int getStatusId() {
 		return statusId;

@@ -16,10 +16,10 @@ public class GradingFormatPostgres implements GradingFormatDAO {
 	private ConnectionUtil connUtil = ConnectionUtil.getConnectionUtil();
 
 	@Override
-	public GradingFormat getById(int id) {
+	public GradingFormat getById(int id) {//1
 		GradingFormat format = null;
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from grading_format where format_id=?";
+			String sql = "select * from trms.grading_format where format_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, id);
 			
@@ -39,10 +39,10 @@ public class GradingFormatPostgres implements GradingFormatDAO {
 	}
 
 	@Override
-	public Set<Object> getAll() {
+	public Set<Object> getAll() {//2
 		Set<Object> formats = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from grading_format";
+			String sql = "select * from trms.grading_format";
 			Statement stmt = conn.createStatement();
 			
 			ResultSet resultSet = stmt.executeQuery(sql);
@@ -61,10 +61,10 @@ public class GradingFormatPostgres implements GradingFormatDAO {
 	}
 
 	@Override
-	public Set<GradingFormat> getByName(String name) {
+	public Set<GradingFormat> getByName(String name) {//3
 		Set<GradingFormat> formats = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from grading_format where format_name=?";
+			String sql = "select * from trms.grading_format where format_name=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, name);
 			

@@ -3,13 +3,15 @@ package com.revature.beans;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Reimbursement {
 	private int reqId;
 	private Employee requestor;
-	private LocalDate eventDate;
-	private LocalTime eventTime;
+	private String eventDate;
+	private String eventTime;
 	private String location;
 	private String description;
 	private double cost;
@@ -18,18 +20,19 @@ public class Reimbursement {
 	private Status status;
 	private LocalDateTime submittedAt;
 	
+		
 	public Reimbursement() {
 		reqId=0;
-		requestor=null;
-		eventDate=null;
-		eventTime=null;
+		requestor= new Employee();
+		eventDate=null;//LocalDate.of(2000,01,01);
+		eventTime=null;//LocalTime.of(00,01,00);
 		location="";
 		description="";
 		cost=0.0;
 		gradingFormat = new GradingFormat();
 		eventType =  new EventType();
 		status = new Status();
-		submittedAt = LocalDateTime.now();
+		submittedAt =null;// LocalDateTime.now();
 	}
 
 	public int getReqId() {
@@ -49,19 +52,23 @@ public class Reimbursement {
 	}
 
 	public LocalDate getEventDate() {
-		return eventDate;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate ld = LocalDate.parse(eventDate,formatter);
+		return ld;
 	}
 
 	public void setEventDate(LocalDate eventDate) {
-		this.eventDate = eventDate;
+		this.eventDate = String.valueOf(eventDate);
 	}
 
 	public LocalTime getEventTime() {
-		return eventTime;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalTime lt = LocalTime.parse(eventTime,formatter);
+		return lt;
 	}
 
 	public void setEventTime(LocalTime eventTime) {
-		this.eventTime = eventTime;
+		this.eventTime = String.valueOf(eventTime);
 	}
 
 	public String getLocation() {
@@ -113,6 +120,8 @@ public class Reimbursement {
 	}
 
 	public LocalDateTime getSubmittedAt() {
+//		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");  
+//        LocalDateTime ldt = LocalDateTime.parse(submittedAt, format);  
 		return submittedAt;
 	}
 
@@ -150,4 +159,6 @@ public class Reimbursement {
 				+ cost + ", gradingFormat=" + gradingFormat + ", eventType=" + eventType + ", status=" + status
 				+ ", submittedAt=" + submittedAt + "]";
 	}
+
+	
 }

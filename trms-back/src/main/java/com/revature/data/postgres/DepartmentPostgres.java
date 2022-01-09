@@ -19,7 +19,7 @@ public class DepartmentPostgres implements DepartmentDAO {
 	public Department getById(int id) {
 		Department dept = null;
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from department where dept_id=?";
+			String sql = "select * from employee.department where dept_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, id);
 			
@@ -42,7 +42,7 @@ public class DepartmentPostgres implements DepartmentDAO {
 	public Set<Department> getAll() {
 		Set<Department> depts = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from department";
+			String sql = "select * from employee.department";
 			Statement stmt = conn.createStatement();
 			
 			ResultSet resultSet = stmt.executeQuery(sql);
@@ -66,7 +66,7 @@ public class DepartmentPostgres implements DepartmentDAO {
 	public Set<Department> getByName(String name) {
 		Set<Department> depts = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from department where dept_name=?";
+			String sql = "select * from employee.department where dept_name=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, name);
 			

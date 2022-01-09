@@ -12,8 +12,8 @@ public class Comment {
 	
 	public Comment() {
 		commentId = 0;
-		request=null;
-		approver=null;
+		request= new Reimbursement();
+		approver= new Employee();
 		commentText="";
 		sentAt=LocalDateTime.now();
 	}

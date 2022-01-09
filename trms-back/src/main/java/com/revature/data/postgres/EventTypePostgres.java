@@ -16,10 +16,10 @@ public class EventTypePostgres implements EventTypeDAO {
 	private ConnectionUtil connUtil = ConnectionUtil.getConnectionUtil();
 
 	@Override
-	public EventType getById(int id) {
+	public EventType getById(int id) {//1
 		EventType eventType = null;
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from event_type where type_id=?";
+			String sql = "select * from trms.event_type where type_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, id);
 			
@@ -29,7 +29,7 @@ public class EventTypePostgres implements EventTypeDAO {
 				eventType = new EventType();
 				eventType.setEventId(id);
 				eventType.setName(resultSet.getString("type_name"));
-				eventType.setPercentCovered(resultSet.getDouble("percent_covered"));
+				eventType.setPercentCovered(resultSet.getDouble("percent_coverage"));
 			}
 		
 		} catch (SQLException e) {
@@ -39,10 +39,10 @@ public class EventTypePostgres implements EventTypeDAO {
 	}
 
 	@Override
-	public Set<Object> getAll() {
+	public Set<Object> getAll() {//2
 		Set<Object> eventTypes = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from event_type";
+			String sql = "select * from trms.event_type";
 			Statement stmt = conn.createStatement();
 			
 			ResultSet resultSet = stmt.executeQuery(sql);
@@ -51,7 +51,7 @@ public class EventTypePostgres implements EventTypeDAO {
 				EventType eventType = new EventType();
 				eventType.setEventId(resultSet.getInt("type_id"));
 				eventType.setName(resultSet.getString("type_name"));
-				eventType.setPercentCovered(resultSet.getDouble("percent_covered"));
+				eventType.setPercentCovered(resultSet.getDouble("percent_coverage"));
 				
 				eventTypes.add(eventType);
 			}
@@ -66,7 +66,7 @@ public class EventTypePostgres implements EventTypeDAO {
 	public Set<EventType> getByName(String name) {
 		Set<EventType> eventTypes = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from event_type where type_name=?";
+			String sql = "select * from trms.event_type where type_name=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, name);
 			
@@ -76,7 +76,7 @@ public class EventTypePostgres implements EventTypeDAO {
 				EventType eventType = new EventType();
 				eventType.setEventId(resultSet.getInt("type_id"));
 				eventType.setName(resultSet.getString("type_name"));
-				eventType.setPercentCovered(resultSet.getDouble("percent_covered"));
+				eventType.setPercentCovered(resultSet.getDouble("percent_coverage"));
 				
 				eventTypes.add(eventType);
 			}

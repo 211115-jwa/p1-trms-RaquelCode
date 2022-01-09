@@ -17,12 +17,12 @@ public class CommentPostgres implements CommentDAO {
 	private ConnectionUtil connUtil = ConnectionUtil.getConnectionUtil();
 
 	@Override
-	public int create(Comment dataToAdd) {
+	public int create(Comment dataToAdd) {//1
 		int generatedId=0;
 		try (Connection conn = connUtil.getConnection()) {
 			conn.setAutoCommit(false);
 			String[] keys = {"comment_id"};
-			String sql="insert into comment"
+			String sql="insert into trms.comment"
 					+ " (comment_text,"
 					+ " req_id,"
 					+ " approver_id,"
@@ -50,10 +50,10 @@ public class CommentPostgres implements CommentDAO {
 	}
 	
 	@Override
-	public Comment getById(int id) {
+	public Comment getById(int id) {//2
 		Comment comment = null;
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from comment where comment_id=?";
+			String sql = "select * from trms.comment where comment_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, id);
 			
@@ -75,10 +75,10 @@ public class CommentPostgres implements CommentDAO {
 	}
 
 	@Override
-	public Set<Comment> getAll() {
+	public Set<Comment> getAll() {//3
 		Set<Comment> comments = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from comment";
+			String sql = "select * from trms.comment";
 			Statement stmt = conn.createStatement();
 			
 			ResultSet resultSet = stmt.executeQuery(sql);
@@ -101,10 +101,10 @@ public class CommentPostgres implements CommentDAO {
 	}
 
 	@Override
-	public Set<Comment> getByRequestId(int reqId) {
+	public Set<Comment> getByRequestId(int reqId) {//4
 		Set<Comment> comments = new HashSet<>();
 		try (Connection conn = connUtil.getConnection()) {
-			String sql = "select * from comment where req_id=?";
+			String sql = "select * from trms.comment where req_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, reqId);
 			

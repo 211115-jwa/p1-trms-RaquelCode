@@ -14,19 +14,19 @@ public class Employee {
 	private Department department;
 	
 	public Employee() {
-		empId=0;
+		empId=15;
 		firstName="First";
 		lastName="Last";
 		username="";
 		password="";
 		role = new Role();
 		funds = 1000.00;
-		supervisor = new Employee(empId);
+		supervisor =new Employee(empId);
 		department = new Department();
+		
 	}
 	
-	
-	public Employee(int empId) {
+	public Employee(int empId) {////added for fix stackoverflow
 		super();
 		this.empId = empId;
 	}
