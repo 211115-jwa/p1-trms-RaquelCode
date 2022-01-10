@@ -48,3 +48,11 @@
 2022-01-08 18:53:39 INFO  ReimbursementDAOTest:28 - EventType [eventId=2, name=Seminars, percentCovered=0.6]
 2022-01-08 18:53:40 INFO  ReimbursementDAOTest:35 - null
 2022-01-08 18:53:41 INFO  Department:32 - null
+2022-01-09 15:05:56 INFO  ReimbursementDAOTest:28 - null
+2022-01-09 15:05:57 INFO  ReimbursementDAOTest:35 - null
+2022-01-09 15:06:08 INFO  ReimbursementDAOTest:28 - null
+2022-01-09 15:06:09 INFO  ReimbursementDAOTest:35 - null
+2022-01-09 15:06:29 INFO  GradingFormatDAOTest:65 - []
+2022-01-09 15:07:22 INFO  ReimbursementDAOTest:127 - null
+2022-01-09 15:07:23 INFO  ReimbursementDAOTest:134 - null
+2022-01-09 15:07:39 INFO  ReimbursementDAOTest:32 - Status [statusId=1, name=Pending Approval, approver=Direct Supervisor]

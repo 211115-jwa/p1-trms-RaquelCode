@@ -18,13 +18,7 @@ public class EmployeesController {
 	
 	private static Logger log = LogManager.getLogger(EmployeesController.class);
 	
-	public static void viewAllEmployees(Context ctx) {
-		
-		Set<Employee> emps = empDAO.getAll();
-		log.info("getting all of the employees");
-		//System.out.println(emps);
-		ctx.json(emps);
-	}
+	
 	public static void viewEmployeeById(Context ctx) {
 		
 		int id = Integer.parseInt(ctx.pathParam("empId"));

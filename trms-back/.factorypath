@@ -1,7 +1,9 @@
 <factorypath>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/javalin/javalin/4.1.1/javalin-4.1.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.6.5/jackson-datatype-jsr310-2.6.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.6.5/jackson-core-2.6.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.6.5/jackson-databind-2.6.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/javalin/javalin/4.2.0/javalin-4.2.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-api/1.7.31/slf4j-api-1.7.31.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" enabled="true" runInBatchMode="false"/>
@@ -25,13 +27,10 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.31/kotlin-stdlib-common-1.5.31.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.5.31/kotlin-stdlib-jdk7-1.5.31.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-simple/1.7.31/slf4j-simple-1.7.31.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.12.4/jackson-databind-2.12.4.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.12.4/jackson-annotations-2.12.4.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.12.4/jackson-core-2.12.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/bytebuddy/byte-buddy/1.11.19/byte-buddy-1.11.19.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/postgresql/postgresql/42.2.23/postgresql-42.2.23.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/net/bytebuddy/byte-buddy/1.11.19/byte-buddy-1.11.19.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/io/cucumber/cucumber-java/7.1.0/cucumber-java-7.1.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/io/cucumber/cucumber-core/7.1.0/cucumber-core-7.1.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/io/cucumber/cucumber-gherkin/7.1.0/cucumber-gherkin-7.1.0.jar" enabled="true" runInBatchMode="false"/>
@@ -104,4 +103,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/seleniumhq/selenium/selenium-chromium-driver/4.0.0/selenium-chromium-driver-4.0.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/seleniumhq/selenium/selenium-json/4.0.0/selenium-json-4.0.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>

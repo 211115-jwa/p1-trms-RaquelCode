@@ -1,8 +1,5 @@
 package com.revature.controllers;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.revature.beans.Employee;
 import com.revature.beans.Reimbursement;
 import com.revature.services.EmployeeService;
@@ -15,7 +12,7 @@ public class RequestsController {
 
 
 	private static EmployeeService empServ = new EmployeeServiceImpl();
-	private static Logger log = LogManager.getLogger(RequestsController.class);
+	//private static Logger log = LogManager.getLogger(RequestsController.class);
 	
 	/**
 	 * Retrieves the submitted reimbursement request from the
@@ -39,7 +36,7 @@ public class RequestsController {
 		
 		Reimbursement request = ctx.bodyAsClass(Reimbursement.class);
 				
-		log.info("submitting request object: " + request + ",   :");
+		//log.info("submitting request object: " + request + ",   :");
 		ctx.result(" nothing set up to view");
 		int reqId = empServ.submitReimbursementRequest(request);
 		if (reqId != 0) {
@@ -73,7 +70,7 @@ public class RequestsController {
 	 */
 	public static void getRequestsByRequestor(Context ctx) {
 		String requestorIdStr = ctx.pathParam("id");
-		log.info("getting all of the requestor requests: " + requestorIdStr);
+		//log.info("getting all of the requestor requests: " + requestorIdStr);
 		
 		
 		try {
