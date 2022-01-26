@@ -1,6 +1,7 @@
 # Tuition Reimbursement Management System
 
 The goal of this project is to work with Agile methodology, testing (unit, integration, and e2e), and front end technologies.
+
 The purpose of TRMS is to provide a system that encourages quality knowledge growth relevant to an individual’s expertise. In order to access the TRMS all employees have the ability to log in and out. Each employee is allowed to claim up to $1000 in tuition reimbursement a year. Event types have different standard reimbursement coverage: University Courses 80%, Seminars 60%, Certification Preparation Classes 75%, Certification 100%, Technical Training 90%, Other 30%. All Employees must complete the Tuition Reimbursement form one week prior to the start of the event. This form must collect: basic employee information; date, time, location, description, cost, grading format, and type of event. Grading formats are pulled from a reference table. Tuition Reimbursement form is assigned Pending Approval by Supervisor immediately upon submission of form (unless applicant is a supervisor, manager or the Benefits Coordinator -- BenCo). After the supervisor approves a claim the Tuition Reimbursement form is assigned Pending Approval by Manager and after the manager approves a claim it is assigned Pending Approval by BenCo.
 
 # Technologies Used
